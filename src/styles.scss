@@ -1,0 +1,8 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+body{background: #222; color: #fff; font-family: sans-serif; padding: 20px;}
+
+.box{
+  width: 60%; padding: 20px; border: 1px solid #ccc; border-radius: 10px; margin-bottom: 15px;
+
+  & *{display: block;}
+}
