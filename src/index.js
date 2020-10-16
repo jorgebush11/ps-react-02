@@ -3,7 +3,8 @@ import ReactDom from "react-dom";
 
 import "./styles.scss";
 
-document.querySelector("#node-1").innerHTML = `
+const render = () => {
+	document.querySelector("#node-1").innerHTML = `
   <div class="box">
     Hello HTML
     <input type="text"/>
@@ -11,13 +12,16 @@ document.querySelector("#node-1").innerHTML = `
   </div>
 `;
 
-ReactDom.render(
-	React.createElement(
-		"div",
-		{ className: "box" },
-		"Hello REACT",
-		React.createElement("input", null),
-		React.createElement("pre", null, new Date().toLocaleTimeString())
-	),
-	document.querySelector("#node-2")
-);
+	ReactDom.render(
+		React.createElement(
+			"div",
+			{ className: "box" },
+			"Hello REACT",
+			React.createElement("input", null),
+			React.createElement("pre", null, new Date().toLocaleTimeString())
+		),
+		document.querySelector("#node-2")
+	);
+};
+
+setInterval(render, 1000);
